@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/champions"
+        android:icon="@drawable/ic_home_32"
+        android:title="Champions" />
+
+    <item
+        android:id="@+id/fav_champions"
+        android:icon="@drawable/ic_fav_32"
+        android:title="Favorite Champions" />
+
+</menu>

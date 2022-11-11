@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/champions_fragment">
+
+    <fragment
+        android:id="@+id/champions_fragment"
+        android:name="com.umutg.lolchampionsapp.presentation.champion_list.ChampionsFragment"
+        android:label="fragment_champions"
+        tools:layout="@layout/fragment_champions" />
+
+    <fragment
+        android:id="@+id/favorite_champions_fragment"
+        android:name="com.umutg.lolchampionsapp.presentation.favorite_champions.FavoriteChampionsFragment"
+        android:label="fragment_favorite_champions"
+        tools:layout="@layout/fragment_favorite_champions" />
+
+    <fragment
+        android:id="@+id/champion_detail_fragment"
+        android:name="com.umutg.lolchampionsapp.presentation.champion_detail.ChampionDetailFragment"
+        android:label="fragment_champion_detail"
+        tools:layout="@layout/fragment_champion_detail" />
+</navigation>
