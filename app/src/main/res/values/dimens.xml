@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="champion_detail_image_width_size">308dp</dimen>
+    <dimen name="champion_detail_image_height_size">560dp</dimen>
+    <dimen name="champion_detail_spell_image_size">64dp</dimen>
+</resources>

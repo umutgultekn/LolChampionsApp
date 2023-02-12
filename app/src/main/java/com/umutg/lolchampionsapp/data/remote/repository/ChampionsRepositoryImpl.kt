@@ -1,6 +1,7 @@
 package com.umutg.lolchampionsapp.data.remote.repository
 
 import com.umutg.lolchampionsapp.data.remote.ChampionsApi
+import com.umutg.lolchampionsapp.data.remote.dto.champion.ChampionDto
 import com.umutg.lolchampionsapp.data.remote.dto.champions.ChampionsDto
 import com.umutg.lolchampionsapp.domain.repository.ChampionsRepository
 import javax.inject.Inject
@@ -10,5 +11,9 @@ class ChampionsRepositoryImpl @Inject constructor(private val api: ChampionsApi)
 
     override suspend fun getChampions(): ChampionsDto {
         return api.getChampions()
+    }
+
+    override suspend fun getChampionById(id: String): ChampionDto {
+        return api.getChampionById(id)
     }
 }

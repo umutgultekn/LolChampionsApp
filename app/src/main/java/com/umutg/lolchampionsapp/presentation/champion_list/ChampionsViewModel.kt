@@ -4,41 +4,44 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.umutg.lolchampionsapp.common.State
+import com.umutg.lolchampionsapp.common.Resource
 import com.umutg.lolchampionsapp.domain.model.Champions
-import com.umutg.lolchampionsapp.domain.use_case.champion_list.GetChampionsUseCase
+import com.umutg.lolchampionsapp.domain.use_case.FavoriteChampionsUseCase
+import com.umutg.lolchampionsapp.domain.use_case.GetChampionsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 @HiltViewModel
-class ChampionsViewModel @Inject constructor(private val useCase: GetChampionsUseCase) :
-    ViewModel() {
+class ChampionsViewModel @Inject constructor(
+    private val useCase: GetChampionsUseCase
+) : ViewModel() {
 
-    val champions: LiveData<State<List<Champions>>> get() = _champions
-    private val _champions = MutableLiveData<State<List<Champions>>>()
+    val champions: LiveData<Resource<List<Champions>>> get() = _champions
+    private val _champions = MutableLiveData<Resource<List<Champions>>>()
 
     init {
         loadChampions()
     }
 
-    private fun loadChampions() {
-        _champions.value = State.Loading<List<Champions>>()
+    fun loadChampions() {
+
+        _champions.value = Resource.Loading()
 
         viewModelScope.launch {
 
-            val state = withContext(Dispatchers.Default) {
+            delay(700)
+
+            val resource = withContext(Dispatchers.Default) {
                 try {
-                    val currenciesValue = useCase.getAllChampions()
-                    State.Success(currenciesValue)
+                    val champions = useCase.getAllChampions()
+                    Resource.Success(champions)
                 } catch (exception: Exception) {
-                    State.Error(exception.message)
+                    Resource.Error(exception.message)
                 }
             }
-            _champions.value = state
+            _champions.value = resource
         }
-
     }
+
 }

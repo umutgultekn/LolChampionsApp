@@ -1,18 +1,27 @@
 package com.umutg.lolchampionsapp.presentation.champion_list
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
 
-import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.facebook.shimmer.Shimmer
+import com.facebook.shimmer.ShimmerDrawable
+import com.umutg.lolchampionsapp.R
 import com.umutg.lolchampionsapp.common.Utils
 import com.umutg.lolchampionsapp.databinding.ChampionsItemBinding
 import com.umutg.lolchampionsapp.domain.model.Champions
 
 
-class ChampionsAdapter(private val champions: List<Champions>) :
+class ChampionsAdapter(
+    private val champions: List<Champions>,
+    private val listener: ChampionsItemClickListener
+) :
     RecyclerView.Adapter<ChampionsAdapter.ViewHolder>() {
 
     /**
@@ -43,12 +52,36 @@ class ChampionsAdapter(private val champions: List<Champions>) :
         with(viewHolder) {
             with(champions[position]) {
 
+                binding.championCardView.setOnClickListener {
+                    listener.onClicked(this)
+                }
                 binding.name.text = this.name
                 binding.title.text = this.title
 
+
+                val requestBuilder: RequestBuilder<Drawable> = Glide.with(binding.image)
+                    .asDrawable().sizeMultiplier(0.05f)
+
+                val shimmer =
+                    Shimmer.AlphaHighlightBuilder()// The attributes for a ShimmerDrawable is set by this builder
+                        .setDuration(1800) // how long the shimmering animation takes to do one full sweep
+                        .setBaseAlpha(0.7f) //the alpha of the underlying children
+                        .setHighlightAlpha(0.6f) // the shimmer alpha amount
+                        .setDirection(Shimmer.Direction.LEFT_TO_RIGHT)
+                        .setAutoStart(true)
+                        .build()
+
+
+                val shimmerDrawable = ShimmerDrawable().apply {
+                    setShimmer(shimmer)
+                }
+
                 Glide.with(context)
                     .load(Utils.convertImageUrl(this.image))
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .thumbnail(requestBuilder)
+                    .placeholder(shimmerDrawable)
+                    .error(AppCompatResources.getDrawable(context, R.drawable.champion_image))
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .into(binding.image)
 
             }

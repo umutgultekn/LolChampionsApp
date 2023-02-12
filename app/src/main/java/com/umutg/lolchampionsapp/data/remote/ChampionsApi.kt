@@ -10,6 +10,6 @@ interface ChampionsApi {
     @GET("/cdn/12.21.1/data/en_US/champion.json")
     suspend fun getChampions(): ChampionsDto
 
-    @GET("/cdn/12.21.1/data/en_US/champion/{name}.json")
-    suspend fun getChampionByName(@Path("name") name: String): ChampionDto
+    @GET("/cdn/12.21.1/data/en_US/champion/{id}.json")
+    suspend fun getChampionById(@Path("id") id: String): ChampionDto
 }

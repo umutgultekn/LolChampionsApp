@@ -7,9 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background">#1E193B</color>
-    <color name="champions_item_background">#302B4F</color>
-    <color name="champions_item_background1">#463F71</color>
+    <color name="background_dark">#1E193B</color>
+    <color name="background_medium">#302B4F</color>
+    <color name="background_light">#463F71</color>
     <color name="champions_item_text">#FFFFFFFF</color>
+    <color name="champion_detail_text">#FFFFFFFF</color>
     <color name="nav_active_color">#E8875E</color>
+    <color name="shimmer_color">#C2C2C2</color>
 </resources>

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">LolChampions</string>
+    <string name="menu_champions_title">Champions</string>
+    <string name="menu_favorites_title">Favorites</string>
+    <string name="spell_q">Q</string>
+    <string name="spell_w">W</string>
+    <string name="spell_e">E</string>
+    <string name="spell_r">R</string>
+    <string name="lore">Lore</string>
+    <string name="lore_text">Once honored defenders of Shurima against the Void, Aatrox and his brethren would eventually become an even greater threat to Runeterra, and were defeated only by cunning mortal sorcery. But after centuries of imprisonment, Aatrox was the first to find freedom once more, corrupting and transforming those foolish enough to try and wield the magical weapon that contained his essence. Now, with stolen flesh, he walks Runeterra in a brutal approximation of his previous form, seeking an apocalyptic and long overdue vengeance.</string>
+    <string name="spells">Spells</string>
+    <string name="undo">Undo</string>
+    <string name="favorite_champion_deleted">%1$s Deleted.</string>
+    <string name="you_have_no_favorite_champion">You have no favorite champion.</string>
 </resources>
