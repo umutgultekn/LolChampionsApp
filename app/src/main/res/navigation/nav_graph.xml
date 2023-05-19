@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/champions">
+    app:startDestination="@id/mapPage">
 
-    <include app:graph="@navigation/champions" />
+    <fragment
+        android:id="@+id/mapPage"
+        android:name="com.umutg.bitaksicaseapp.presentation.map.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map"/>
 
 </navigation>

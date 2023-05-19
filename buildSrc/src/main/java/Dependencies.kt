@@ -55,12 +55,12 @@ object Deps {
 
 object ConfigData {
 
-    const val applicationId = "com.umutg.lolchampionsapp"
+    const val applicationId = "com.umutg.bitaksicaseapp"
     const val minSdkVersion = 21
     const val targetSdkVersion = 33
     const val compileSdkVersion = 33
     const val versionCode = 1
     const val versionName = "1.0"
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    const val namespace = "com.umutg.lolchampionsapp"
+    const val namespace = "com.umutg.bitaksicaseapp"
 }

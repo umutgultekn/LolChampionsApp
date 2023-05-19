@@ -5,7 +5,6 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvError"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="@color/background_light"
@@ -32,14 +31,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Warning"
+                android:text="@string/warning"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvErrorMessage"
+                android:id="@+id/text_view_error_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -50,12 +49,12 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnTryAgain"
+                android:id="@+id/button_try_again"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:background="@color/white"
-                android:text="Try Again"
+                android:text="@string/try_again"
                 android:textAllCaps="false"
                 android:textColor="@color/background_light" />
         </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LolChampions</string>
+    <string name="app_name">BiTaksiCase</string>
     <string name="menu_champions_title">Champions</string>
     <string name="menu_favorites_title">Favorites</string>
     <string name="spell_q">Q</string>
@@ -12,4 +12,6 @@
     <string name="undo">Undo</string>
     <string name="favorite_champion_deleted">%1$s Deleted.</string>
     <string name="you_have_no_favorite_champion">You have no favorite champion.</string>
+    <string name="warning">Warning</string>
+    <string name="try_again">Try Again</string>
 </resources>

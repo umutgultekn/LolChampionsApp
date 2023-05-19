@@ -51,6 +51,9 @@ dependencies {
 
     implementation(Deps.legacySupport)
     implementation(Deps.lifecycleViewModel)
+    implementation ("com.google.android.gms:play-services-maps:17.0.0")
+    implementation ("com.google.android.gms:play-services-location:18.0.0")
+    implementation ("com.google.maps.android:android-maps-utils:1.1.0")
 
     //tests
     testImplementation(Deps.junit)
